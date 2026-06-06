@@ -1,0 +1,8 @@
+{
+    "name": "News",
+    "slug": "news",
+    "version": "1.0.0",
+    "author": "Nexpell",
+    "description": "News publishing system",
+    "api_version": 1
+}

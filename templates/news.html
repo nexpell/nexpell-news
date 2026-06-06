@@ -1,0 +1,280 @@
+<!-- news_head -->
+<div class="head-boxes {class}">
+    <span class="head-boxes-head">{title}</span>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">{title}</span>
+    </h2>
+    <p class="head-boxes-foot">{subtitle}</p>
+</div>
+<!-- END -->
+ <!-- news_category_show_head -->
+<div class="category-header">
+    <h1>{category_name}</h1>
+    <p>{category_description}</p>
+</div>
+<!-- END -->
+<!-- news_category -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+  	<li class="breadcrumb-item active" aria-current="page">{title_categories}</li>
+  </ol>
+</nav>
+<!-- END -->
+
+<!-- news_filters -->
+<div class="card news-filter-card mb-4">
+  <div class="card-body">
+    <form method="get" action="index.php" class="row g-3 align-items-end">
+      <input type="hidden" name="site" value="news">
+      <div class="col-md-4">
+        <label class="form-label">{filter_category_label}</label>
+        <span class="news-select-wrap">
+          <select class="form-select" name="filter_cat">
+            {filter_category_options}
+          </select>
+          <i class="bi bi-chevron-down news-select-icon" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">{filter_archive_label}</label>
+        <span class="news-select-wrap">
+          <select class="form-select" name="archive">
+            {filter_archive_options}
+          </select>
+          <i class="bi bi-chevron-down news-select-icon" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="col-md-4 news-filter-actions">
+        <button type="submit" class="btn btn-primary w-100">{filter_submit}</button>
+        <a href="{reset_url}" class="btn btn-secondary w-100">{filter_reset}</a>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- END -->
+<!-- news_details_head -->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="{title_url}">{title_categories}</a></li>
+		<li class="breadcrumb-item active" aria-current="page">{categories}: {name}</li>
+	</ol>
+</nav>
+<!-- END -->
+<!-- news_details_header -->
+
+<!-- END -->
+<!-- news_details -->
+ <!-- <div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="card news-card">
+      <div class="news-img-container">
+        <span class="badge text-bg-secondary category-badge">
+            <a href="{title_url_show}">{name}</a>
+        </span>
+          <img src="{image}" class="img-cat" alt="">
+      </div>
+      <div class="p-3">
+        <div class="d-flex">
+          <div class="py-3 px-4 border-end text-center">
+            <h4 class="text-primary mb-0">{tag}</h4>
+            <p class="mb-0"></p>{monat}
+            <p class="mb-0"></p>{year}
+          </div>
+          <h5 class="p-3 d-flex align-items-center">
+            {title}
+          </h5>
+        </div>
+        <div class="mt-2 border-top pt-2 small text-muted text-end">
+          {by} {username} | {tag} {monat} {year}
+        </div>
+        <div class="d-grid gap-2">
+          <a href="{url_watch}" class="btn btn-primary mt-2 pointer-events-none">{read_more}</a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+<!-- END -->
+<!-- news_content_details_head -->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="{title_url}">{title_categories}</a></li>
+		<li class="breadcrumb-item"><a href="{title_url_show}">{categories}: {name}</a></li>
+		<li class="breadcrumb-item active" aria-current="page">{title}</li>
+	</ol>
+</nav>
+<!-- END -->
+<!-- news_content_details -->
+<div class="card news-full-card">
+	<div class="news-full-card-body">
+
+    <div class="news-article-card img-art" style="position: relative; background-image: url('{image}'); background-size: cover; background-position: center; overflow: hidden;color: #fff;">
+    
+      <!-- Oben links: Datum -->
+      <div style="position: absolute;text-align: left;">
+        <div class="badge news-badge-right bg-primary">
+          <p class="news-block news-day">{day}</p>
+          <p class="news-block news-month">{month}</p>
+          <p class="news-block news-year">{year}</p>
+        </div>
+      </div>
+
+      <!-- Unten rechts: Kategorie-Badge -->
+      <div style="position: absolute; bottom: 0px; right: 0px;">
+          <div class="badge news-badge-right bg-primary">
+              {category}
+          </div>
+      </div>
+    </div>
+
+		<div class="d-flex justify-content-between align-items-center">
+      <h3 class="mt-4 mb-4">{title}</h3>
+      <span class="text-end"><small>{info} {username} - {stand} {date}</small></span>
+    </div>
+		{content}
+		<p>Link: {link}</p>
+		<hr>
+		<small>({views} {lang_views})</small>
+	</div>
+</div>
+
+<!-- END -->
+<!-- news_content_all_head -->
+<div class="row">
+<!-- END -->
+
+<!-- news_content_all -->
+  <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+    <div class="card news-card">
+      <div class="news-img-container">
+        <span class="badge text-bg-secondary category-badge">
+            {name}
+        </span>
+          <img src="{image}" class="img-cat" alt="">
+      </div>
+      <div class="p-3">
+        <div class="d-flex">
+          <!-- Linke Datumsbox -->
+          <div class="news-card-date py-3 px-4 border-end text-center">
+            <h4 class="news-card-day text-body mb-1">{tag}</h4>
+            <span class="news-card-month text-body">{monat}</span>
+            <span class="news-card-year text-body">{year}</span>
+          </div>
+
+          <!-- Rechte Titelbox mit fester Höhe -->
+          <div class="p-3 d-flex align-items-center" style="height: 100px;">
+            <h5 class="news-card-title text-body fw-semibold mb-0">{title}</h5>
+          </div>
+        </div>
+        
+
+<div class="d-flex flex-column mt-2 border-top pt-2" style="height: 200px;"> <!-- Höhe anpassen -->
+  
+  <!-- Content oben, füllt den verfügbaren Platz -->
+  <div class="flex-grow-1 overflow-auto">
+    {content}
+  </div>
+
+  <!-- Button unten -->
+  <div class="mt-2">
+    <a href="{url_watch}" class="btn btn-primary w-100">{read_more}</a>
+  </div>
+
+  <!-- Footer mit Info -->
+  <div class="mt-2 border-top pt-2 small text-muted text-end">
+    {by} {username} | {tag} {monat} {year}
+  </div>
+</div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+<!-- END -->
+<!-- news_content_all_foot -->
+</div>
+<!-- END -->
+
+<!-- news_content_details_foot -->
+
+<!-- END -->
+
+<!-- news_content_foot -->
+
+<!-- END -->
+
+<!-- news_widget_sidebar_news_head -->
+<div class="card shadow-sm">
+  <div class="card-body p-3" style="margin: -10px -10px -10px -10px;">
+    <!-- Beispiel Header, falls gewünscht -->
+    <h5 class="mb-3 border-bottom pb-2">Artikel</h5> 		
+   <!-- END -->
+
+<!-- news_widget_sidebar_content -->
+
+<!-- news_widget_sidebar_news_head -->
+
+    <div class="row align-items-center mb-3">
+      <div class="col-3 text-center border-end border-secondary pe-3">
+        <div class="text-muted small">
+          <div>{tag}</div>
+          <div>{monat} <i>{year}</i></div>
+        </div>
+      </div>
+      <div class="col-9 ps-3">
+
+        <div class="small text-muted">
+          Titel: <span class="text-primary">{title}</span> <br> <span>{text} </span> <br> {by} <b>{username}</b>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-2">
+<!-- END -->
+<!-- news_widget_sidebar_news_foot -->		
+	</div>
+</div>
+  <!-- END -->
+
+<!-- news_widget_content_news_head -->
+
+  <div class="row g-4 mt-1">
+<!-- END -->
+
+<!-- news_widget_content_content -->
+  <div class="col-lg-4 col-md-6 col-sm-6">
+    <div class="card news-card">
+      <div class="news-img-container">
+        <span class="badge text-bg-secondary category-badge">
+            {name}
+        </span>
+          <img src="{image}" class="img-cat" alt="">
+      </div>
+      <div class="p-3">
+        <div class="d-flex">
+          <div class="news-card-date py-3 px-4 border-end text-center">
+            <h4 class="news-card-day text-body mb-1">{tag}</h4>
+            <span class="news-card-month text-body">{monat}</span>
+            <span class="news-card-year text-body">{year}</span>
+          </div>
+          <h5 class="news-card-title text-body fw-semibold p-3 d-flex align-items-center mb-0">
+            {title}
+          </h5>
+        </div>
+        <div class="mt-2 border-top pt-2 small text-muted text-end">
+          {by} {username} | {tag} {monat} {year}
+        </div>
+        <div class="d-grid gap-2">
+          <a href="{url_watch}" class="btn btn-primary mt-2 pointer-events-none">{read_more}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END -->
+
+<!-- news_widget_content_news_foot -->
+  </div>
+
+<!-- END -->
+
+
