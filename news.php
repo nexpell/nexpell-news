@@ -495,8 +495,8 @@ if ($news_id > 0) {
         $userID   = $loggedin ? (int)$_SESSION['userID'] : 0;
 
         $image = !empty($category['image'])
-            ? "includes/plugins/news/images/news_categories/" . $category['image']
-            : "includes/plugins/news/images/no-image.jpg";
+            ? "/includes/plugins/news/images/news_categories/" . $category['image']
+            : "/includes/plugins/news/images/no-image.jpg";
 
         // updated_at → Timestamp
         $ts = news_release_timestamp($new);
